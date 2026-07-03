@@ -1,0 +1,692 @@
+[
+  {
+    "file": "p01_cover_00.jpeg",
+    "page": 1,
+    "section": "cover",
+    "index": 0,
+    "width": 2667,
+    "height": 1500,
+    "format": "jpeg",
+    "bytes": 64911
+  },
+  {
+    "file": "p01_cover_01.jpeg",
+    "page": 1,
+    "section": "cover",
+    "index": 1,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg",
+    "bytes": 237317
+  },
+  {
+    "file": "p02_about_00.jpeg",
+    "page": 2,
+    "section": "about",
+    "index": 0,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2460
+  },
+  {
+    "file": "p02_about_01.jpeg",
+    "page": 2,
+    "section": "about",
+    "index": 1,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2207
+  },
+  {
+    "file": "p02_about_02.jpeg",
+    "page": 2,
+    "section": "about",
+    "index": 2,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 1948
+  },
+  {
+    "file": "p02_about_03.jpeg",
+    "page": 2,
+    "section": "about",
+    "index": 3,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2319
+  },
+  {
+    "file": "p02_about_04.jpeg",
+    "page": 2,
+    "section": "about",
+    "index": 4,
+    "width": 1440,
+    "height": 1098,
+    "format": "jpeg",
+    "bytes": 284429
+  },
+  {
+    "file": "p03_why_us_00.jpeg",
+    "page": 3,
+    "section": "why_us",
+    "index": 0,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2454
+  },
+  {
+    "file": "p03_why_us_01.jpeg",
+    "page": 3,
+    "section": "why_us",
+    "index": 1,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2196
+  },
+  {
+    "file": "p03_why_us_02.jpeg",
+    "page": 3,
+    "section": "why_us",
+    "index": 2,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2158
+  },
+  {
+    "file": "p03_why_us_03.jpeg",
+    "page": 3,
+    "section": "why_us",
+    "index": 3,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 1958
+  },
+  {
+    "file": "p05_contract_00.jpeg",
+    "page": 5,
+    "section": "contract",
+    "index": 0,
+    "width": 80,
+    "height": 80,
+    "format": "jpeg",
+    "bytes": 1680
+  },
+  {
+    "file": "p05_contract_01.jpeg",
+    "page": 5,
+    "section": "contract",
+    "index": 1,
+    "width": 80,
+    "height": 80,
+    "format": "jpeg",
+    "bytes": 1421
+  },
+  {
+    "file": "p05_contract_02.jpeg",
+    "page": 5,
+    "section": "contract",
+    "index": 2,
+    "width": 1266,
+    "height": 1710,
+    "format": "jpeg",
+    "bytes": 180623
+  },
+  {
+    "file": "p05_contract_03.jpeg",
+    "page": 5,
+    "section": "contract",
+    "index": 3,
+    "width": 1150,
+    "height": 2257,
+    "format": "jpeg",
+    "bytes": 233431
+  },
+  {
+    "file": "p06_payment_vtb_00.jpeg",
+    "page": 6,
+    "section": "payment_vtb",
+    "index": 0,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2047
+  },
+  {
+    "file": "p06_payment_vtb_01.jpeg",
+    "page": 6,
+    "section": "payment_vtb",
+    "index": 1,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 1841
+  },
+  {
+    "file": "p06_payment_vtb_02.jpeg",
+    "page": 6,
+    "section": "payment_vtb",
+    "index": 2,
+    "width": 1320,
+    "height": 1357,
+    "format": "jpeg",
+    "bytes": 89792
+  },
+  {
+    "file": "p06_payment_vtb_03.jpeg",
+    "page": 6,
+    "section": "payment_vtb",
+    "index": 3,
+    "width": 1320,
+    "height": 1357,
+    "format": "jpeg",
+    "bytes": 209084
+  },
+  {
+    "file": "p07_inspection_chaboshi_00.jpeg",
+    "page": 7,
+    "section": "inspection_chaboshi",
+    "index": 0,
+    "width": 92,
+    "height": 92,
+    "format": "jpeg",
+    "bytes": 2027
+  },
+  {
+    "file": "p07_inspection_chaboshi_01.jpeg",
+    "page": 7,
+    "section": "inspection_chaboshi",
+    "index": 1,
+    "width": 92,
+    "height": 92,
+    "format": "jpeg",
+    "bytes": 1814
+  },
+  {
+    "file": "p07_inspection_chaboshi_02.jpeg",
+    "page": 7,
+    "section": "inspection_chaboshi",
+    "index": 2,
+    "width": 92,
+    "height": 92,
+    "format": "jpeg",
+    "bytes": 1606
+  },
+  {
+    "file": "p07_inspection_chaboshi_03.jpeg",
+    "page": 7,
+    "section": "inspection_chaboshi",
+    "index": 3,
+    "width": 558,
+    "height": 940,
+    "format": "jpeg",
+    "bytes": 65254
+  },
+  {
+    "file": "p07_inspection_chaboshi_04.jpeg",
+    "page": 7,
+    "section": "inspection_chaboshi",
+    "index": 4,
+    "width": 553,
+    "height": 940,
+    "format": "jpeg",
+    "bytes": 53899
+  },
+  {
+    "file": "p08_inspection_detail_00.jpeg",
+    "page": 8,
+    "section": "inspection_detail",
+    "index": 0,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2291
+  },
+  {
+    "file": "p08_inspection_detail_01.jpeg",
+    "page": 8,
+    "section": "inspection_detail",
+    "index": 1,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2433
+  },
+  {
+    "file": "p08_inspection_detail_02.jpeg",
+    "page": 8,
+    "section": "inspection_detail",
+    "index": 2,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2171
+  },
+  {
+    "file": "p08_inspection_detail_03.jpeg",
+    "page": 8,
+    "section": "inspection_detail",
+    "index": 3,
+    "width": 589,
+    "height": 787,
+    "format": "jpeg",
+    "bytes": 40055
+  },
+  {
+    "file": "p08_inspection_detail_04.jpeg",
+    "page": 8,
+    "section": "inspection_detail",
+    "index": 4,
+    "width": 553,
+    "height": 787,
+    "format": "jpeg",
+    "bytes": 37419
+  },
+  {
+    "file": "p09_logistics_00.jpeg",
+    "page": 9,
+    "section": "logistics",
+    "index": 0,
+    "width": 1716,
+    "height": 1080,
+    "format": "jpeg",
+    "bytes": 217959
+  },
+  {
+    "file": "p09_logistics_01.jpeg",
+    "page": 9,
+    "section": "logistics",
+    "index": 1,
+    "width": 1440,
+    "height": 906,
+    "format": "jpeg",
+    "bytes": 241660
+  },
+  {
+    "file": "p09_logistics_02.jpeg",
+    "page": 9,
+    "section": "logistics",
+    "index": 2,
+    "width": 1440,
+    "height": 906,
+    "format": "jpeg",
+    "bytes": 242732
+  },
+  {
+    "file": "p10_pricing_00.jpeg",
+    "page": 10,
+    "section": "pricing",
+    "index": 0,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 1854
+  },
+  {
+    "file": "p10_pricing_01.jpeg",
+    "page": 10,
+    "section": "pricing",
+    "index": 1,
+    "width": 105,
+    "height": 105,
+    "format": "jpeg",
+    "bytes": 2095
+  },
+  {
+    "file": "p11_services_00.jpeg",
+    "page": 11,
+    "section": "services",
+    "index": 0,
+    "width": 154,
+    "height": 154,
+    "format": "jpeg",
+    "bytes": 3055
+  },
+  {
+    "file": "p11_services_01.jpeg",
+    "page": 11,
+    "section": "services",
+    "index": 1,
+    "width": 154,
+    "height": 154,
+    "format": "jpeg",
+    "bytes": 2731
+  },
+  {
+    "file": "p11_services_02.jpeg",
+    "page": 11,
+    "section": "services",
+    "index": 2,
+    "width": 154,
+    "height": 154,
+    "format": "jpeg",
+    "bytes": 3079
+  },
+  {
+    "file": "p11_services_03.jpeg",
+    "page": 11,
+    "section": "services",
+    "index": 3,
+    "width": 80,
+    "height": 80,
+    "format": "jpeg",
+    "bytes": 1799
+  },
+  {
+    "file": "p12_clients_a_00.jpeg",
+    "page": 12,
+    "section": "clients_a",
+    "index": 0,
+    "width": 593,
+    "height": 379,
+    "format": "jpeg",
+    "bytes": 56095
+  },
+  {
+    "file": "p12_clients_a_01.jpeg",
+    "page": 12,
+    "section": "clients_a",
+    "index": 1,
+    "width": 960,
+    "height": 693,
+    "format": "jpeg",
+    "bytes": 104504
+  },
+  {
+    "file": "p12_clients_a_02.jpeg",
+    "page": 12,
+    "section": "clients_a",
+    "index": 2,
+    "width": 910,
+    "height": 605,
+    "format": "jpeg",
+    "bytes": 91146
+  },
+  {
+    "file": "p12_clients_a_03.jpeg",
+    "page": 12,
+    "section": "clients_a",
+    "index": 3,
+    "width": 755,
+    "height": 469,
+    "format": "jpeg",
+    "bytes": 71171
+  },
+  {
+    "file": "p12_clients_a_04.jpeg",
+    "page": 12,
+    "section": "clients_a",
+    "index": 4,
+    "width": 840,
+    "height": 593,
+    "format": "jpeg",
+    "bytes": 96191
+  },
+  {
+    "file": "p13_clients_b_00.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 0,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 148932
+  },
+  {
+    "file": "p13_clients_b_01.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 1,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 83290
+  },
+  {
+    "file": "p13_clients_b_02.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 2,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 111331
+  },
+  {
+    "file": "p13_clients_b_03.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 3,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 90569
+  },
+  {
+    "file": "p13_clients_b_04.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 4,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 145169
+  },
+  {
+    "file": "p13_clients_b_05.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 5,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 156723
+  },
+  {
+    "file": "p13_clients_b_06.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 6,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 142883
+  },
+  {
+    "file": "p13_clients_b_07.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 7,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 128220
+  },
+  {
+    "file": "p13_clients_b_08.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 8,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 99317
+  },
+  {
+    "file": "p13_clients_b_09.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 9,
+    "width": 946,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 120809
+  },
+  {
+    "file": "p13_clients_b_10.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 10,
+    "width": 722,
+    "height": 542,
+    "format": "jpeg",
+    "bytes": 86999
+  },
+  {
+    "file": "p13_clients_b_11.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 11,
+    "width": 1395,
+    "height": 1046,
+    "format": "jpeg",
+    "bytes": 228848
+  },
+  {
+    "file": "p13_clients_b_12.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 12,
+    "width": 719,
+    "height": 432,
+    "format": "jpeg",
+    "bytes": 54984
+  },
+  {
+    "file": "p13_clients_b_13.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 13,
+    "width": 960,
+    "height": 720,
+    "format": "jpeg",
+    "bytes": 121245
+  },
+  {
+    "file": "p13_clients_b_14.jpeg",
+    "page": 13,
+    "section": "clients_b",
+    "index": 14,
+    "width": 685,
+    "height": 514,
+    "format": "jpeg",
+    "bytes": 88050
+  },
+  {
+    "file": "p14_team_00.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 0,
+    "width": 945,
+    "height": 1079,
+    "format": "jpeg",
+    "bytes": 131623
+  },
+  {
+    "file": "p14_team_01.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 1,
+    "width": 56,
+    "height": 56,
+    "format": "jpeg",
+    "bytes": 1078
+  },
+  {
+    "file": "p14_team_02.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 2,
+    "width": 56,
+    "height": 56,
+    "format": "jpeg",
+    "bytes": 1337
+  },
+  {
+    "file": "p14_team_03.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 3,
+    "width": 896,
+    "height": 1024,
+    "format": "jpeg",
+    "bytes": 103413
+  },
+  {
+    "file": "p14_team_04.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 4,
+    "width": 56,
+    "height": 56,
+    "format": "jpeg",
+    "bytes": 1077
+  },
+  {
+    "file": "p14_team_05.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 5,
+    "width": 56,
+    "height": 56,
+    "format": "jpeg",
+    "bytes": 1335
+  },
+  {
+    "file": "p14_team_06.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 6,
+    "width": 960,
+    "height": 960,
+    "format": "jpeg",
+    "bytes": 76019
+  },
+  {
+    "file": "p14_team_07.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 7,
+    "width": 885,
+    "height": 886,
+    "format": "jpeg",
+    "bytes": 68186
+  },
+  {
+    "file": "p14_team_08.jpeg",
+    "page": 14,
+    "section": "team",
+    "index": 8,
+    "width": 960,
+    "height": 960,
+    "format": "jpeg",
+    "bytes": 74550
+  },
+  {
+    "file": "p15_contact_00.jpeg",
+    "page": 15,
+    "section": "contact",
+    "index": 0,
+    "width": 80,
+    "height": 80,
+    "format": "jpeg",
+    "bytes": 1849
+  },
+  {
+    "file": "p15_contact_01.jpeg",
+    "page": 15,
+    "section": "contact",
+    "index": 1,
+    "width": 80,
+    "height": 80,
+    "format": "jpeg",
+    "bytes": 1647
+  }
+]
