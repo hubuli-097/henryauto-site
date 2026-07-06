@@ -155,6 +155,10 @@ window.HENRY_I18N = {
     clients: {
       eyebrow: "Фото клиентов",
       title: "Реальные фото передачи авто клиентам из России",
+      stories_sub: "Избранные истории доставки",
+      gallery_eyebrow: "Больше фото",
+      gallery_title: "Дополнительные фото передачи авто",
+      gallery_caption: "Реальные фото передачи автомобилей клиентам из России",
       c1_title: "Новый Audi Q3 для семьи",
       c1_text: "Клиенты из Москвы, фото сразу после подписания договора.",
       c1_alt: "Audi Q3 — Москва",
@@ -357,6 +361,10 @@ window.HENRY_I18N = {
     clients: {
       eyebrow: "客户交车照",
       title: "俄罗斯客户真实交车照片",
+      stories_sub: "精选交车案例",
+      gallery_eyebrow: "更多实拍",
+      gallery_title: "更多交车现场照片",
+      gallery_caption: "俄罗斯客户真实交车实拍",
       c1_title: "家庭全新 Audi Q3",
       c1_text: "莫斯科客户，签约后即刻留影。",
       c1_alt: "Audi Q3 — 莫斯科",
@@ -559,6 +567,10 @@ window.HENRY_I18N = {
     clients: {
       eyebrow: "Client Photos",
       title: "Real Handover Photos from Russian Clients",
+      stories_sub: "Featured delivery stories",
+      gallery_eyebrow: "More photos",
+      gallery_title: "Additional handover photos",
+      gallery_caption: "Real vehicle handover photos from Russian clients",
       c1_title: "New Audi Q3 for the Family",
       c1_text: "Moscow clients, photo right after signing the contract.",
       c1_alt: "Audi Q3 — Moscow",

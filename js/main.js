@@ -109,4 +109,111 @@
 
     sections.forEach((section) => observer.observe(section));
   }
+
+  function initClientSliders() {
+    document.querySelectorAll("[data-slider]").forEach((root) => {
+      const track = root.querySelector(".client-slider-track");
+      const slides = [...root.querySelectorAll(".client-slide")];
+      const dotsWrap = root.querySelector(".client-slider-dots");
+      const prevBtn = root.querySelector(".client-slider-prev");
+      const nextBtn = root.querySelector(".client-slider-next");
+      const currentEl = root.querySelector(".client-slider-current");
+      const totalEl = root.querySelector(".client-slider-total");
+      const intervalMs = Number(root.dataset.autoplay) || 7000;
+
+      if (!track || slides.length === 0) return;
+
+      let index = 0;
+      let timer = null;
+
+      if (totalEl) totalEl.textContent = String(slides.length);
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "client-slider-dot" + (i === 0 ? " active" : "");
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", `Slide ${i + 1}`);
+        dot.addEventListener("click", () => goTo(i, true));
+        dotsWrap?.appendChild(dot);
+      });
+
+      const dots = dotsWrap ? [...dotsWrap.querySelectorAll(".client-slider-dot")] : [];
+
+      function goTo(nextIndex, userTriggered) {
+        index = (nextIndex + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+          dot.setAttribute("aria-selected", String(i === index));
+        });
+        if (currentEl) currentEl.textContent = String(index + 1);
+        slides.forEach((slide, i) => {
+          slide.setAttribute("aria-hidden", String(i !== index));
+        });
+        if (userTriggered) restartAutoplay();
+      }
+
+      function next() {
+        goTo(index + 1, false);
+      }
+
+      function prev() {
+        goTo(index - 1, true);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        timer = window.setInterval(next, intervalMs);
+      }
+
+      function stopAutoplay() {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function restartAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      prevBtn?.addEventListener("click", prev);
+      nextBtn?.addEventListener("click", () => goTo(index + 1, true));
+
+      root.addEventListener("mouseenter", stopAutoplay);
+      root.addEventListener("mouseleave", startAutoplay);
+      root.addEventListener("focusin", stopAutoplay);
+      root.addEventListener("focusout", startAutoplay);
+
+      let touchStartX = 0;
+      root.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.changedTouches[0].clientX;
+          stopAutoplay();
+        },
+        { passive: true }
+      );
+      root.addEventListener(
+        "touchend",
+        (e) => {
+          const delta = e.changedTouches[0].clientX - touchStartX;
+          if (Math.abs(delta) > 40) {
+            if (delta < 0) goTo(index + 1, true);
+            else prev();
+          } else {
+            startAutoplay();
+          }
+        },
+        { passive: true }
+      );
+
+      goTo(0, false);
+      startAutoplay();
+    });
+  }
+
+  initClientSliders();
 })();

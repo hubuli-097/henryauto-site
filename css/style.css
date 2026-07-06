@@ -765,53 +765,146 @@ section.dark-bg .section-desc {
 }
 
 /* Clients */
-.clients-featured {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+.clients-stories-sub {
+  margin-inline: auto;
 }
 
-.client-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
+.clients-gallery-block {
+  margin-top: 3rem;
+}
+
+.clients-gallery-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.client-slider {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.client-slider-viewport {
   overflow: hidden;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  background: var(--navy);
 }
 
-.client-card img {
+.client-slider-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.client-slide {
+  flex: 0 0 100%;
+  position: relative;
+  min-width: 0;
+}
+
+.client-slide img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  display: block;
 }
 
-.client-card-body {
-  padding: 1.15rem;
+.client-slide-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.5rem 1.25rem;
+  background: linear-gradient(transparent, rgba(10, 22, 40, 0.92));
+  color: var(--white);
 }
 
-.client-card h3 {
-  font-size: 0.95rem;
+.client-slide-caption h3 {
   margin: 0 0 0.35rem;
+  font-size: 1.05rem;
 }
 
-.client-card p {
+.client-slide-caption p {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.client-slide-caption--light p {
+  font-size: 0.9rem;
+}
+
+.client-slider-btn {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--navy);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  z-index: 2;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.client-slider-btn:hover {
+  background: var(--white);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.client-slider-prev {
+  left: 12px;
+}
+
+.client-slider-next {
+  right: 12px;
+}
+
+.client-slider-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0 0.25rem;
+}
+
+.client-slider-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.client-slider-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.client-slider-dot.active {
+  background: var(--orange);
+  transform: scale(1.15);
+}
+
+.client-slider-counter {
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-muted);
-}
-
-.clients-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-}
-
-.clients-gallery img {
-  border-radius: 8px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  width: 100%;
+  white-space: nowrap;
 }
 
 .clients-banner {
@@ -1012,8 +1105,34 @@ section.dark-bg .section-desc {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .clients-gallery {
-    grid-template-columns: repeat(3, 1fr);
+  .clients-gallery-block .section-head {
+    margin-bottom: 1.5rem;
+  }
+
+  .client-slider-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.35rem;
+  }
+
+  .client-slider-prev {
+    left: 8px;
+  }
+
+  .client-slider-next {
+    right: 8px;
+  }
+
+  .client-slide img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .client-slide-caption {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .client-slide-caption h3 {
+    font-size: 0.95rem;
   }
 }
 
@@ -1041,7 +1160,6 @@ section.dark-bg .section-desc {
   .logistics-steps,
   .price-grid,
   .service-grid,
-  .clients-featured,
   .team-support,
   .pay-grid,
   .doc-gallery,
@@ -1057,10 +1175,6 @@ section.dark-bg .section-desc {
   .team-lead-card img {
     width: 100px;
     height: 120px;
-  }
-
-  .clients-gallery {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .mobile-bar {
