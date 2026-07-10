@@ -856,6 +856,19 @@ section.dark-bg .section-desc {
   transition: background 0.2s, transform 0.2s;
 }
 
+.client-slider-btn::before {
+  display: block;
+  line-height: 1;
+}
+
+.client-slider-prev::before {
+  content: "\2039";
+}
+
+.client-slider-next::before {
+  content: "\203A";
+}
+
 .client-slider-btn:hover {
   background: var(--white);
   transform: translateY(-50%) scale(1.05);
