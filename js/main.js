@@ -184,7 +184,7 @@
     const isSamePanel = nextIndex === panelIndex;
 
     panelIndex = nextIndex;
-    track.style.transform = `translateX(-${panelIndex * 100}vw)`;
+    track.style.transform = "";
     document.body.dataset.activePanel = id;
 
     panels.forEach((panel) => {
@@ -239,10 +239,7 @@
     viewport.addEventListener(
       "touchstart",
       (e) => {
-        if (e.target.closest("[data-slider], .nav-mobile, .contact-modal")) {
-          touchActive = false;
-          return;
-        }
+        if (e.target.closest("[data-slider], .nav-mobile, .contact-modal")) return;
         touchActive = true;
         touchAxis = null;
         touchStartX = e.changedTouches[0].clientX;
@@ -260,12 +257,8 @@
         if (touchAxis == null && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
           touchAxis = Math.abs(deltaX) > Math.abs(deltaY) ? "x" : "y";
         }
-        // 明确横向滑动时阻止浏览器橡皮筋拖出空白
-        if (touchAxis === "x" && e.cancelable) {
-          e.preventDefault();
-        }
       },
-      { passive: false }
+      { passive: true }
     );
 
     viewport.addEventListener(
