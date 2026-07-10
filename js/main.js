@@ -1,5 +1,4 @@
 (function () {
-  const STORAGE_KEY = "henryauto_lang";
   const SUPPORTED = ["ru", "zh", "en"];
   const PANEL_ORDER = ["home", "about", "process", "contract", "inspection", "clients", "team"];
 
@@ -14,11 +13,6 @@
   }
 
   function detectDefaultLang() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved && SUPPORTED.includes(saved)) return saved;
-    const nav = (navigator.language || "").toLowerCase();
-    if (nav.startsWith("zh")) return "zh";
-    if (nav.startsWith("ru")) return "ru";
     return "ru";
   }
 
@@ -56,7 +50,6 @@
       btn.setAttribute("aria-pressed", String(active));
     });
 
-    localStorage.setItem(STORAGE_KEY, lang);
     window.__henryLang = lang;
   }
 
