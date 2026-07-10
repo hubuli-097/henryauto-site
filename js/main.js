@@ -84,11 +84,36 @@
   const toggle = document.querySelector(".nav-toggle");
   const mobileNav = document.querySelector(".nav-mobile");
 
+  function setMobileNavOpen(open) {
+    if (!toggle || !mobileNav) return;
+    toggle.setAttribute("aria-expanded", String(open));
+    mobileNav.hidden = !open;
+    document.body.classList.toggle("nav-mobile-open", open);
+  }
+
+  function closeMobileNav() {
+    setMobileNavOpen(false);
+  }
+
   if (toggle && mobileNav) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      mobileNav.hidden = open;
+      setMobileNavOpen(!open);
+    });
+
+    mobileNav.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    document.addEventListener("click", () => {
+      if (toggle.getAttribute("aria-expanded") === "true") {
+        closeMobileNav();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMobileNav();
     });
   }
 
@@ -159,7 +184,8 @@
     const isSamePanel = nextIndex === panelIndex;
 
     panelIndex = nextIndex;
-    track.style.transform = `translateX(-${panelIndex * 100}%)`;
+    // % 相对 track 自身宽度；N 个 panel 时每屏偏移 100/N
+    track.style.transform = `translateX(-${(panelIndex / panels.length) * 100}%)`;
     document.body.dataset.activePanel = id;
 
     panels.forEach((panel) => {
@@ -167,17 +193,13 @@
     });
 
     updateNavState(id);
+    closeMobileNav();
 
     if (!options.preserveScroll && !isSamePanel) {
       window.scrollTo(0, 0);
     }
     if (options.focusContact) {
       window.setTimeout(scrollToContactBar, 420);
-    }
-
-    if (toggle && mobileNav && !mobileNav.hidden) {
-      toggle.setAttribute("aria-expanded", "false");
-      mobileNav.hidden = true;
     }
   }
 
@@ -212,23 +234,49 @@
 
   const viewport = document.getElementById("panel-viewport");
   if (viewport) {
+    let touchAxis = null;
+    let touchActive = false;
+
     viewport.addEventListener(
       "touchstart",
       (e) => {
-        if (e.target.closest("[data-slider]")) return;
+        if (e.target.closest("[data-slider], .nav-mobile, .contact-modal")) {
+          touchActive = false;
+          return;
+        }
+        touchActive = true;
+        touchAxis = null;
         touchStartX = e.changedTouches[0].clientX;
         touchStartY = e.changedTouches[0].clientY;
       },
       { passive: true }
     );
+
+    viewport.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!touchActive || !e.touches[0]) return;
+        const deltaX = e.touches[0].clientX - touchStartX;
+        const deltaY = e.touches[0].clientY - touchStartY;
+        if (touchAxis == null && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
+          touchAxis = Math.abs(deltaX) > Math.abs(deltaY) ? "x" : "y";
+        }
+        // 明确横向滑动时阻止浏览器橡皮筋拖出空白
+        if (touchAxis === "x" && e.cancelable) {
+          e.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+
     viewport.addEventListener(
       "touchend",
       (e) => {
-        if (e.target.closest("[data-slider]")) return;
+        if (!touchActive) return;
+        touchActive = false;
+        if (touchAxis !== "x") return;
         const deltaX = e.changedTouches[0].clientX - touchStartX;
-        const deltaY = e.changedTouches[0].clientY - touchStartY;
-        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) return;
-        if (pageScrollTop() > 8) return;
+        if (Math.abs(deltaX) < 56) return;
         if (deltaX < 0 && panelIndex < PANEL_ORDER.length - 1) {
           goToPanel(PANEL_ORDER[panelIndex + 1]);
         } else if (deltaX > 0 && panelIndex > 0) {

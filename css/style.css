@@ -32,6 +32,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
   scrollbar-gutter: stable;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -48,6 +49,7 @@ body.panel-app {
   overflow-y: auto;
   height: auto;
   min-height: var(--viewport-h);
+  overscroll-behavior-x: none;
 }
 
 body.panel-app[data-active-panel="home"] {
@@ -278,10 +280,22 @@ a {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   max-height: 70vh;
   overflow-y: auto;
+  position: relative;
+  z-index: 102;
 }
 
 .nav-mobile[hidden] {
   display: none;
+}
+
+/* 菜单打开时：点空白处关闭 */
+body.nav-mobile-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  z-index: 99;
+  background: rgba(10, 22, 40, 0.45);
 }
 
 .nav-mobile a {
@@ -295,7 +309,9 @@ a {
   position: relative;
   height: auto;
   min-height: var(--viewport-h);
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
+  touch-action: pan-y;
 }
 
 .panel-track {
