@@ -184,8 +184,7 @@
     const isSamePanel = nextIndex === panelIndex;
 
     panelIndex = nextIndex;
-    // % 相对 track 自身宽度；N 个 panel 时每屏偏移 100/N
-    track.style.transform = `translateX(-${(panelIndex / panels.length) * 100}%)`;
+    track.style.transform = `translateX(-${panelIndex * 100}vw)`;
     document.body.dataset.activePanel = id;
 
     panels.forEach((panel) => {
