@@ -4,35 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/henryauto-site/">
-  <meta name="description" content="HENRY AUTO �?экспорт автомобилей из Китая в Россию. Подбор, проверка, доставка до двери.">
+  <meta name="description" content="HENRY AUTO — экспорт автомобилей из Китая в Россию. Подбор, проверка, доставка до двери.">
   <title>HENRY AUTO | Экспорт авто из Китая в Россию</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="panel-app" data-active-panel="home">
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">HENRY <span>AUTO</span></a>
+    <div class="header-inner">
+      <a href="#" class="logo" data-panel="home">HENRY <span>AUTO</span></a>
       <nav class="nav-desktop" data-i18n-aria="nav.main_aria" aria-label="Навигация">
-        <a href="#about" data-i18n="nav.about">О нас</a>
-        <a href="#why" data-i18n="nav.why">Преимущества</a>
-        <a href="#process" data-i18n="nav.process">Процесс</a>
-        <a href="#contract" data-i18n="nav.contract">Договор</a>
-        <a href="#payment" data-i18n="nav.payment">Оплата</a>
-        <a href="#inspection" data-i18n="nav.inspection">Проверка</a>
-        <a href="#logistics" data-i18n="nav.logistics">Логистика</a>
-        <a href="#pricing" data-i18n="nav.pricing">Цены</a>
-        <a href="#clients" data-i18n="nav.clients">Клиенты</a>
-        <a href="#team" data-i18n="nav.team">Команда</a>
+        <a href="#" data-panel="home" data-i18n="nav.home">Главная</a>
+        <a href="#" data-panel="about" data-i18n="nav.about">О нас</a>
+        <a href="#" data-panel="process" data-i18n="nav.process">Процесс</a>
+        <a href="#" data-panel="contract" data-i18n="nav.contract">Договор</a>
+        <a href="#" data-panel="inspection" data-i18n="nav.inspection">Проверка</a>
+        <a href="#" data-panel="clients" data-i18n="nav.clients">Клиенты</a>
+        <a href="#" data-panel="team" data-i18n="nav.team">Команда</a>
       </nav>
-      <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Язык">
-        <button type="button" data-lang="ru" class="active" aria-pressed="true">RU</button>
-        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <div class="header-tools">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Язык">
+          <button type="button" data-lang="ru" class="active" aria-pressed="true">RU</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" data-contact-highlight data-i18n="nav.contact">Связаться</button>
       </div>
-      <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.contact">Связаться</a>
       <button class="nav-toggle" data-i18n-aria="nav.menu_aria" aria-label="Меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -43,508 +42,484 @@
         <button type="button" data-lang="zh" aria-pressed="false">中文</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a href="#about" data-i18n="nav.about">О нас</a>
-      <a href="#why" data-i18n="nav.why">Преимущества</a>
-      <a href="#process" data-i18n="nav.process">Процесс</a>
-      <a href="#contract" data-i18n="nav.contract">Договор</a>
-      <a href="#payment" data-i18n="nav.payment">Оплата</a>
-      <a href="#inspection" data-i18n="nav.inspection">Проверка</a>
-      <a href="#logistics" data-i18n="nav.logistics">Логистика</a>
-      <a href="#pricing" data-i18n="nav.pricing">Цены</a>
-      <a href="#clients" data-i18n="nav.clients">Клиенты</a>
-      <a href="#team" data-i18n="nav.team">Команда</a>
-      <a href="#contact" class="btn btn-primary" data-i18n="nav.contact">Связаться</a>
+      <a href="#" data-panel="home" data-i18n="nav.home">Главная</a>
+      <a href="#" data-panel="about" data-i18n="nav.about">О нас</a>
+      <a href="#" data-panel="process" data-i18n="nav.process">Процесс</a>
+      <a href="#" data-panel="contract" data-i18n="nav.contract">Договор</a>
+      <a href="#" data-panel="inspection" data-i18n="nav.inspection">Проверка</a>
+      <a href="#" data-panel="clients" data-i18n="nav.clients">Клиенты</a>
+      <a href="#" data-panel="team" data-i18n="nav.team">Команда</a>
+      <button type="button" class="btn btn-primary" data-contact-highlight data-i18n="nav.contact">Связаться</button>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="top">
-      <div class="hero-bg" role="img" data-i18n-aria="hero.bg_aria" aria-label="Автовоз с автомобилями"></div>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <p class="hero-brand">HENRY AUTO</p>
-        <div class="hero-line" aria-hidden="true"></div>
-        <h1 data-i18n="hero.h1">Экспорт авто из Китая в Россию</h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">ПОДБОР · ПРОВЕРКА · ЭКСПОРТ</p>
-        <p class="hero-sub" data-i18n="hero.sub">AUTO FROM CHINA FOR RUSSIA · Chengdu Henry Trading Co., Ltd. �?Надёжный партнёр в сфере автомобильного импорта</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Связаться с нами</a>
-          <a href="#process" class="btn btn-outline" data-i18n="hero.cta2">Как мы работаем</a>
-        </div>
-      </div>
-    </section>
+  <div class="panel-viewport" id="panel-viewport">
+    <div class="panel-track" id="panel-track">
 
-    <section class="about alt-bg" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="section-eyebrow" data-i18n="about.eyebrow">О нас</p>
-            <h2 class="section-title" data-i18n="about.title">Ваш надёжный партнёр по экспорту автомобилей</h2>
-            <p class="section-desc" data-i18n="about.desc">HENRY AUTO (Chengdu Henry Trading Co., Ltd.) �?профессиональная автомобильная торговая компания с официальной лицензией на экспорт из Китая.</p>
-          </div>
-          <div class="about-image">
-            <img src="assets/images/p02_about_04.jpeg" data-i18n-alt="about.img_alt" alt="Автомобили на площадке Henry Auto" loading="lazy">
-          </div>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📋</div>
-            <h3 data-i18n="about.f1_title">Официальная лицензия</h3>
-            <p data-i18n="about.f1_text">Работаем на законных основаниях, имеем все необходимые разрешения на международную торговлю.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🏦</div>
-            <h3 data-i18n="about.f2_title">Безопасная оплата</h3>
-            <p data-i18n="about.f2_text">Удобные расчёты через банк ВТБ, прозрачный контроль движения средств и защита интересов.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🔍</div>
-            <h3 data-i18n="about.f3_title">Полная проверка авто</h3>
-            <p data-i18n="about.f3_text">Независимая диагностика состояния, проверка истории эксплуатации и скрытых дефектов.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📦</div>
-            <h3 data-i18n="about.f4_title">Растаможка под ключ</h3>
-            <p data-i18n="about.f4_text">Профессиональное сопровождение таможенных процедур, минимизация бюрократии для клиента.</p>
-          </article>
-        </div>
-        <p class="transport-note" data-i18n-html="about.transport"><strong>Безопасная транспортировка:</strong> используем специализированный автотранспорт для погрузки и доставки автомобилей до порта.</p>
-      </div>
-    </section>
-
-    <section class="why" id="why">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="why.eyebrow">Почему выбирают нас</p>
-          <h2 class="section-title" data-i18n="why.title">4 причины выбрать HENRY AUTO</h2>
-        </div>
-        <div class="reason-grid">
-          <article class="reason-card">
-            <div class="reason-num">01</div>
-            <h3 data-i18n="why.r1_title">Официальная лицензия на экспорт</h3>
-            <p data-i18n="why.r1_text">Легальное право на экспорт любых автомобилей и полный комплект таможенных документов.</p>
-          </article>
-          <article class="reason-card">
-            <div class="reason-num">02</div>
-            <h3 data-i18n="why.r2_title">Оплата через банк ВТБ</h3>
-            <p data-i18n="why.r2_text">Безопасная система расчетов через крупный российский банк.</p>
-          </article>
-          <article class="reason-card">
-            <div class="reason-num">03</div>
-            <h3 data-i18n="why.r3_title">Полная прозрачность состояния</h3>
-            <p data-i18n="why.r3_text">Обязательная независимая техническая проверка каждого автомобиля перед экспортом.</p>
-          </article>
-          <article class="reason-card">
-            <div class="reason-num">04</div>
-            <h3 data-i18n="why.r4_title">Полная прозрачность цен</h3>
-            <p data-i18n="why.r4_text">Стоимость доставки, таможенного оформления и всех дополнительных услуг фиксирована.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="process alt-bg" id="process">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="process.eyebrow">Процесс работы</p>
-          <h2 class="section-title" data-i18n="process.title">8 простых шагов к покупке авто</h2>
-          <p class="section-desc" data-i18n="process.desc">От подбора до передачи �?каждый шаг прозрачен.</p>
-        </div>
-        <div class="process-grid">
-          <article class="process-step" data-step="01">
-            <h3 data-i18n="process.s1_title">Подбор авто</h3>
-            <p data-i18n="process.s1_text">Подбор оптимальных вариантов под ваши потребности.</p>
-          </article>
-          <article class="process-step" data-step="02">
-            <h3 data-i18n="process.s2_title">Профессиональная проверка</h3>
-            <p data-i18n="process.s2_text">Полная техническая диагностика и независимый официальный отчёт.</p>
-          </article>
-          <article class="process-step" data-step="03">
-            <h3 data-i18n="process.s3_title">Заключение договора</h3>
-            <p data-i18n="process.s3_text">Официальный договор экспортной продажи с фиксированными условиями.</p>
-          </article>
-          <article class="process-step" data-step="04">
-            <h3 data-i18n="process.s4_title">Безопасная оплата</h3>
-            <p data-i18n="process.s4_text">Расчёты через банк ВТБ с защищёнными каналами.</p>
-          </article>
-          <article class="process-step" data-step="05">
-            <h3 data-i18n="process.s5_title">Таможенное оформление</h3>
-            <p data-i18n="process.s5_text">Подготовка полного пакета документов для легализации экспорта.</p>
-          </article>
-          <article class="process-step" data-step="06">
-            <h3 data-i18n="process.s6_title">Международная перевозка</h3>
-            <p data-i18n="process.s6_text">Надёжная доставка специальным автовозом до порта в России.</p>
-          </article>
-          <article class="process-step" data-step="07">
-            <h3 data-i18n="process.s7_title">Растаможка в РФ</h3>
-            <p data-i18n="process.s7_text">Сопровождение импорта, уплаты пошлин и получения разрешений.</p>
-          </article>
-          <article class="process-step" data-step="08">
-            <h3 data-i18n="process.s8_title">Передача автомобиля</h3>
-            <p data-i18n="process.s8_text">Доставка авто до вашего адреса, передача ключей и документов.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contract" id="contract">
-      <div class="container split-grid">
-        <div>
-          <p class="section-eyebrow" data-i18n="contract.eyebrow">Договор и гарантии</p>
-          <h2 class="section-title" data-i18n="contract.title">Официальный трёхъязычный договор</h2>
-          <p class="section-desc" data-i18n="contract.desc">Каждая сделка оформляется официальным договором купли-продажи и проформой-инвойсом на трёх языках.</p>
-          <ul class="bullet-list">
-            <li data-i18n-html="contract.b1"><strong>Трёхъязычный формат</strong> �?все бумаги на трёх языках.</li>
-            <li data-i18n-html="contract.b2"><strong>Заверение и прозрачность</strong> �?печать компании и подписи.</li>
-          </ul>
-        </div>
-        <div class="doc-gallery">
-          <img src="assets/images/p05_contract_02.jpeg" data-i18n-alt="contract.img1_alt" alt="SALES CONTRACT" loading="lazy">
-          <img src="assets/images/p05_contract_03.jpeg" data-i18n-alt="contract.img2_alt" alt="PROFORMA INVOICE" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="payment alt-bg" id="payment">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-eyebrow" data-i18n="payment.eyebrow">Безопасная оплата</p>
-          <h2 class="section-title" data-i18n="payment.title">Оплата через банк ВТБ</h2>
-          <p class="section-desc" data-i18n="payment.desc">Все средства поступают напрямую на корпоративный счёт Chengdu Henry Trading Co., Ltd.</p>
-        </div>
-        <div class="pay-grid">
-          <article class="pay-card">
-            <h3 data-i18n="payment.p1_title">Прямой перевод</h3>
-            <p data-i18n="payment.p1_text">Оплата напрямую на расчётный счёт компании без посредников.</p>
-          </article>
-          <article class="pay-card">
-            <h3 data-i18n="payment.p2_title">Официальные документы</h3>
-            <p data-i18n="payment.p2_text">На каждый платёж �?стандартная банковская квитанция ВТБ.</p>
-          </article>
-          <article class="pay-card">
-            <h3 data-i18n="payment.p3_title">Реальная банковская квитанция</h3>
-            <p data-i18n="payment.p3_text">Пример подтверждения оплаты с указанием получателя.</p>
-          </article>
-          <article class="pay-card">
-            <h3 data-i18n="payment.p4_title">Надёжное сотрудничество</h3>
-            <p data-i18n="payment.p4_text">Официальные банковские инструменты ВТБ.</p>
-          </article>
-        </div>
-        <div class="receipt-gallery">
-          <img src="assets/images/p06_payment_vtb_02.jpeg" data-i18n-alt="payment.img1_alt" alt="VTB receipt 1" loading="lazy">
-          <img src="assets/images/p06_payment_vtb_03.jpeg" data-i18n-alt="payment.img2_alt" alt="VTB receipt 2" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="inspection" id="inspection">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="inspection.eyebrow">Прозрачность состояния</p>
-          <h2 class="section-title" data-i18n="inspection.title">Обязательная независимая проверка перед экспортом</h2>
-          <p class="section-desc" data-i18n="inspection.desc">Каждое авто проходит строгую проверку CHABOSHI.</p>
-        </div>
-        <div class="stat-row">
-          <div class="stat-box"><strong data-i18n="inspection.stat1">Класс S</strong><span data-i18n="inspection.stat1_desc">Наивысший рейтинг</span></div>
-          <div class="stat-box"><strong data-i18n="inspection.stat2">122</strong><span data-i18n="inspection.stat2_desc">Пункта диагностики</span></div>
-          <div class="stat-box"><strong data-i18n="inspection.stat3">0</strong><span data-i18n="inspection.stat3_desc">Рисков ДТП</span></div>
-        </div>
-        <div class="report-gallery">
-          <img src="assets/images/p07_inspection_chaboshi_03.jpeg" data-i18n-alt="inspection.img1_alt" alt="CHABOSHI report" loading="lazy">
-          <img src="assets/images/p07_inspection_chaboshi_04.jpeg" data-i18n-alt="inspection.img2_alt" alt="CHABOSHI defects" loading="lazy">
-          <img src="assets/images/p08_inspection_detail_03.jpeg" data-i18n-alt="inspection.img3_alt" alt="Body inspection" loading="lazy">
-          <img src="assets/images/p08_inspection_detail_04.jpeg" data-i18n-alt="inspection.img4_alt" alt="Defect details" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="logistics alt-bg" id="logistics">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="logistics.eyebrow">Логистика</p>
-          <h2 class="section-title" data-i18n="logistics.title">Перевозка автовозом �?безопасная доставка</h2>
-          <p class="section-desc" data-i18n="logistics.desc">Строгий контроль безопасности и соблюдение сроков.</p>
-        </div>
-        <div class="logistics-hero">
-          <img src="assets/images/p09_logistics_00.jpeg" data-i18n-alt="logistics.hero_alt" alt="Car carrier" loading="lazy">
-        </div>
-        <div class="logistics-steps">
-          <article class="logistics-step">
-            <p class="num">01</p>
-            <h3 data-i18n="logistics.s1_title">Автовоз с новыми авто</h3>
-            <p data-i18n="logistics.s1_text">Специализированные двухъярусные автовозы.</p>
-          </article>
-          <article class="logistics-step">
-            <p class="num">02</p>
-            <h3 data-i18n="logistics.s2_title">Погрузка и фиксация</h3>
-            <p data-i18n="logistics.s2_text">Гидравлические платформы с надёжными фиксаторами.</p>
-          </article>
-          <article class="logistics-step">
-            <p class="num">03</p>
-            <h3 data-i18n="logistics.s3_title">Доставка до портовой зоны</h3>
-            <p data-i18n="logistics.s3_text">Комплексная логистика до морских портов России.</p>
-          </article>
-        </div>
-        <div class="logistics-thumbs">
-          <img src="assets/images/p09_logistics_01.jpeg" data-i18n-alt="logistics.thumb1_alt" alt="Loading" loading="lazy">
-          <img src="assets/images/p09_logistics_02.jpeg" data-i18n-alt="logistics.thumb2_alt" alt="Port delivery" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing" id="pricing">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="pricing.eyebrow">Прозрачные цены</p>
-          <h2 class="section-title" data-i18n="pricing.title">Стоимость перевозки (CIP)</h2>
-        </div>
-        <div class="price-grid">
-          <article class="price-card">
-            <h3 data-i18n="pricing.west_title">Западные популярные города</h3>
-            <p class="cities" data-i18n="pricing.west_cities">Санкт-Петербург · Казань · Екатеринбург · Москва</p>
-            <p class="amount">20900¥</p>
-            <p class="unit" data-i18n="pricing.unit">за единицу</p>
-          </article>
-          <article class="price-card">
-            <h3 data-i18n="pricing.east_title">Восточные города</h3>
-            <p class="cities" data-i18n="pricing.east_cities">Уссурийск и регионы Дальнего Востока</p>
-            <p class="amount">8800¥</p>
-            <p class="unit" data-i18n="pricing.unit">за единицу</p>
-          </article>
-        </div>
-        <p class="price-note" data-i18n="pricing.note">CIP �?доставка до пункта назначения в России с оплаченной страховкой.</p>
-      </div>
-    </section>
-
-    <section class="services alt-bg" id="services">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="services.eyebrow">Дополнительные услуги</p>
-          <h2 class="section-title" data-i18n="services.title">Прозрачные и понятные расходы</h2>
-        </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <p class="price">550 ¥</p>
-            <h3 data-i18n="services.s1_title">Перерегистрация</h3>
-            <p data-i18n="services.s1_text">Полное сопровождение перерегистрации ТС.</p>
-          </article>
-          <article class="service-card">
-            <p class="price">500 ¥</p>
-            <h3 data-i18n="services.s2_title">Проверка авто</h3>
-            <p data-i18n="services.s2_text">Комплексная диагностика перед покупкой.</p>
-          </article>
-          <article class="service-card">
-            <p class="price">8000 ¥</p>
-            <h3 data-i18n="services.s3_title">Сервисный сбор</h3>
-            <p data-i18n="services.s3_text">Единый фиксированный сбор за организационные услуги.</p>
-          </article>
-        </div>
-        <p class="guarantee-bar" data-i18n="services.guarantee">Гарантия: все расходы фиксированные и прозрачные.</p>
-      </div>
-    </section>
-
-    <section class="clients" id="clients">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="clients.eyebrow">Фото клиентов</p>
-          <h2 class="section-title" data-i18n="clients.title">Реальные фото передачи авто клиентам из России</h2>
-          <p class="section-desc clients-stories-sub" data-i18n="clients.stories_sub">Избранные истории доставки</p>
-        </div>
-
-        <div class="client-slider" data-slider data-autoplay="7000" aria-roledescription="carousel" aria-label="Featured client stories">
-          <div class="client-slider-viewport">
-            <div class="client-slider-track">
-              <article class="client-slide client-slide--story">
-                <img src="assets/images/p12_clients_a_01.jpeg" data-i18n-alt="clients.c1_alt" alt="Audi Q3" loading="eager">
-                <div class="client-slide-caption">
-                  <h3 data-i18n="clients.c1_title">Новый Audi Q3 для семьи</h3>
-                  <p data-i18n="clients.c1_text">Клиенты из Москвы.</p>
-                </div>
-              </article>
-              <article class="client-slide client-slide--story">
-                <img src="assets/images/p12_clients_a_02.jpeg" data-i18n-alt="clients.c2_alt" alt="Tayron" loading="lazy">
-                <div class="client-slide-caption">
-                  <h3 data-i18n="clients.c2_title">Volkswagen Tayron в Санкт-Петербурге</h3>
-                  <p data-i18n="clients.c2_text">Поздравляем с покупкой нового кроссовера.</p>
-                </div>
-              </article>
-              <article class="client-slide client-slide--story">
-                <img src="assets/images/p12_clients_a_03.jpeg" data-i18n-alt="clients.c3_alt" alt="Golf GTI" loading="lazy">
-                <div class="client-slide-caption">
-                  <h3 data-i18n="clients.c3_title">Volkswagen Golf GTI</h3>
-                  <p data-i18n="clients.c3_text">Екатеринбург.</p>
-                </div>
-              </article>
-              <article class="client-slide client-slide--story">
-                <img src="assets/images/p12_clients_a_04.jpeg" data-i18n-alt="clients.c4_alt" alt="Mazda CX-5" loading="lazy">
-                <div class="client-slide-caption">
-                  <h3 data-i18n="clients.c4_title">Mazda CX-5 в зимней Москве</h3>
-                  <p data-i18n="clients.c4_text">Быстрая доставка в сложную погоду.</p>
-                </div>
-              </article>
-              <article class="client-slide client-slide--story">
-                <img src="assets/images/p12_clients_a_00.jpeg" data-i18n-alt="clients.c5_alt" alt="Audi Q2" loading="lazy">
-                <div class="client-slide-caption">
-                  <h3 data-i18n="clients.c5_title">Audi Q2 �?яркий выбор!</h3>
-                  <p data-i18n="clients.c5_text">Радость клиента �?наша главная цель.</p>
-                </div>
-              </article>
-              <article class="client-slide client-slide--story">
-                <img src="assets/images/p13_clients_b_11.jpeg" data-i18n-alt="clients.c6_alt" alt="Happy clients" loading="lazy">
-                <div class="client-slide-caption">
-                  <h3 data-i18n="clients.c6_title">Счастливые покупатели</h3>
-                  <p data-i18n="clients.c6_text">Свидетельство доверия наших клиентов.</p>
-                </div>
-              </article>
+      <!-- Panel 0: Home -->
+      <section class="panel panel--home" data-panel="home" aria-label="Home">
+        <div class="panel-inner panel-inner--home" id="home-scroll">
+          <div class="hero hero--viewport hero--landing">
+            <div class="hero-media" aria-hidden="true">
+              <img
+                class="hero-img"
+                src="assets/images/p01_cover_01.jpeg"
+                alt=""
+                data-i18n-alt="hero.bg_aria"
+                decoding="async"
+                fetchpriority="high"
+              >
+              <div class="hero-overlay hero-overlay--landing"></div>
             </div>
+            <div class="hero-center">
+              <h1 data-i18n="hero.h1">Экспорт авто из Китая в Россию</h1>
+              <p class="hero-brand-sub" data-i18n="hero.brand_sub">HENRY AUTO · Chengdu Henry Trading Co., Ltd.</p>
+              <p class="hero-services" data-i18n="hero.services">Подбор | Проверка | Экспорт | Оплата ВТБ | Логистика | Растаможка</p>
+              <div class="hero-actions hero-actions--center">
+                <button type="button" class="btn btn-primary btn-lg" data-panel="process" data-i18n="hero.cta2">Как мы работаем</button>
+                <button type="button" class="btn btn-outline btn-lg" data-contact-highlight data-i18n="hero.cta1">Связаться с нами</button>
+              </div>
+              <p class="hero-note" data-i18n="hero.note">Официальный экспорт · Независимая проверка · Безопасная оплата через ВТБ</p>
+            </div>
+            <button type="button" class="hero-scroll-hint" data-contact-highlight data-i18n-aria="hero.scroll_aria" aria-label="К контактам">
+              <span aria-hidden="true">↓</span>
+            </button>
           </div>
-          <button type="button" class="client-slider-btn client-slider-prev" aria-label="Previous slide"></button>
-          <button type="button" class="client-slider-btn client-slider-next" aria-label="Next slide"></button>
-          <div class="client-slider-footer">
-            <div class="client-slider-dots" role="tablist"></div>
-            <span class="client-slider-counter" aria-live="polite"><span class="client-slider-current">1</span> / <span class="client-slider-total">6</span></span>
-          </div>
-        </div>
 
-        <div class="clients-gallery-block">
-          <div class="section-head center">
-            <p class="section-eyebrow" data-i18n="clients.gallery_eyebrow">Больше фото</p>
-            <h3 class="clients-gallery-title" data-i18n="clients.gallery_title">Дополнительные фото передачи авто</h3>
-          </div>
-
-          <div class="client-slider client-slider--gallery" data-slider data-autoplay="6000" aria-roledescription="carousel" aria-label="More client photos">
-            <div class="client-slider-viewport">
-              <div class="client-slider-track">
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_00.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
+          <footer class="contact-bar contact-bar--scroll" id="contact-bar" aria-label="Contact">
+            <div class="contact-bar-inner">
+              <div class="section-head center contact-bar-head">
+                <h2 class="section-title" data-i18n="contact.title">Готовы выбрать авто из Китая?</h2>
+                <p class="section-desc" data-i18n="contact.desc">Свяжитесь с нами — подберём лучшие варианты.</p>
+              </div>
+              <div class="contact-grid contact-grid--bar">
+                <article class="contact-card">
+                  <h3>Henry</h3>
+                  <p class="role" data-i18n="contact.henry_role">Менеджер по продажам</p>
+                  <div class="contact-links">
+                    <a href="https://wa.me/8617736876888" target="_blank" rel="noopener"><span data-i18n="contact.wa">WhatsApp</span>: +86 177 3687 6888</a>
+                    <a href="https://t.me/+8617736876888" target="_blank" rel="noopener"><span data-i18n="contact.tg">Telegram</span>: +86 177 3687 6888</a>
+                    <span><span data-i18n="contact.wc">WeChat</span>: Better_hhy</span>
                   </div>
                 </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_01.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
-                  </div>
-                </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_02.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
-                  </div>
-                </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_03.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
-                  </div>
-                </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_04.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
-                  </div>
-                </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_05.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
-                  </div>
-                </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_06.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
-                  </div>
-                </article>
-                <article class="client-slide client-slide--gallery">
-                  <img src="assets/images/p13_clients_b_07.jpeg" data-i18n-alt="clients.gallery_alt" alt="Client" loading="lazy">
-                  <div class="client-slide-caption client-slide-caption--light">
-                    <p data-i18n="clients.gallery_caption">Реальные фото передачи автомобилей клиентам из России</p>
+                <article class="contact-card">
+                  <h3>Zi Lan</h3>
+                  <p class="role" data-i18n="contact.zilan_role">Менеджер по продажам</p>
+                  <div class="contact-links">
+                    <a href="https://wa.me/8615082603119" target="_blank" rel="noopener"><span data-i18n="contact.wa">WhatsApp</span>: +86 150 8260 3119</a>
+                    <a href="https://t.me/+15026591435" target="_blank" rel="noopener"><span data-i18n="contact.tg">Telegram</span>: +1 502 659 1435</a>
+                    <span><span data-i18n="contact.wc">WeChat</span>: 1577984136</span>
                   </div>
                 </article>
               </div>
             </div>
-            <button type="button" class="client-slider-btn client-slider-prev" aria-label="Previous slide"></button>
-            <button type="button" class="client-slider-btn client-slider-next" aria-label="Next slide"></button>
-            <div class="client-slider-footer">
-              <div class="client-slider-dots" role="tablist"></div>
-              <span class="client-slider-counter" aria-live="polite"><span class="client-slider-current">1</span> / <span class="client-slider-total">8</span></span>
+          </footer>
+        </div>
+      </section>
+
+      <!-- Panel 1: About -->
+      <section class="panel panel--scroll alt-bg" data-panel="about" aria-label="About">
+        <div class="panel-inner">
+          <div class="container">
+            <div class="section-head center">
+              <p class="section-eyebrow" data-i18n="about.eyebrow">О нас</p>
+              <h2 class="section-title" data-i18n="about.title">Ваш надёжный партнёр по экспорту автомобилей</h2>
+            </div>
+            <div class="about-grid">
+              <div class="about-copy">
+                <p class="section-desc" data-i18n="about.desc">HENRY AUTO (Chengdu Henry Trading Co., Ltd.) — профессиональная автомобильная торговая компания с официальной лицензией на экспорт из Китая.</p>
+                <p class="transport-note" data-i18n-html="about.transport"></p>
+              </div>
+              <div class="about-image">
+                <img src="assets/images/p02_about_04.jpeg" data-i18n-alt="about.img_alt" alt="Автомобили на площадке Henry Auto" loading="lazy">
+              </div>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">1</div>
+                <h3 data-i18n="about.f1_title">Официальная лицензия</h3>
+                <p data-i18n="about.f1_text">Работаем на законных основаниях, имеем все необходимые разрешения на международную торговлю.</p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">2</div>
+                <h3 data-i18n="about.f2_title">Безопасная оплата</h3>
+                <p data-i18n="about.f2_text">Удобные расчёты через банк ВТБ, прозрачный контроль движения средств и защита интересов.</p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">3</div>
+                <h3 data-i18n="about.f3_title">Полная проверка авто</h3>
+                <p data-i18n="about.f3_text">Независимая диагностика состояния, проверка истории эксплуатации и скрытых дефектов.</p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">4</div>
+                <h3 data-i18n="about.f4_title">Растаможка под ключ</h3>
+                <p data-i18n="about.f4_text">Профессиональное сопровождение таможенных процедур, минимизация бюрократии для клиента.</p>
+              </article>
+            </div>
+
+            <div class="section-head center panel-section-gap">
+              <p class="section-eyebrow" data-i18n="why.eyebrow">Почему выбирают нас</p>
+              <h2 class="section-title" data-i18n="why.title">4 причины выбрать HENRY AUTO</h2>
+            </div>
+            <div class="reason-grid">
+              <article class="reason-card">
+                <div class="reason-num">01</div>
+                <h3 data-i18n="why.r1_title">Официальная лицензия на экспорт</h3>
+                <p data-i18n="why.r1_text">Легальное право на экспорт любых автомобилей и полный комплект таможенных документов для беспрепятственной доставки.</p>
+              </article>
+              <article class="reason-card">
+                <div class="reason-num">02</div>
+                <h3 data-i18n="why.r2_title">Оплата через банк ВТБ</h3>
+                <p data-i18n="why.r2_text">Безопасная система расчетов через крупный российский банк, гарантирующая защиту средств клиентов на всех этапах сделки.</p>
+              </article>
+              <article class="reason-card">
+                <div class="reason-num">03</div>
+                <h3 data-i18n="why.r3_title">Полная прозрачность состояния</h3>
+                <p data-i18n="why.r3_text">Обязательная независимая техническая проверка каждого автомобиля перед экспортом с полным отчётом о состоянии.</p>
+              </article>
+              <article class="reason-card">
+                <div class="reason-num">04</div>
+                <h3 data-i18n="why.r4_title">Полная прозрачность цен</h3>
+                <p data-i18n="why.r4_text">Стоимость доставки, таможенного оформления и всех дополнительных услуг фиксирована и понятна до начала сотрудничества.</p>
+              </article>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="clients-banner">
-          <strong data-i18n="clients.banner_title">5000+ российских клиентов</strong>
-          <p data-i18n="clients.banner_text">Мы доставляем не только автомобили, но и спокойствие и доверие.</p>
+      <!-- Panel 2: Process -->
+      <section class="panel panel--scroll alt-bg" data-panel="process" aria-label="Process">
+        <div class="panel-inner">
+          <div class="container">
+            <div class="section-head center">
+              <p class="section-eyebrow" data-i18n="process.eyebrow">Процесс работы</p>
+              <h2 class="section-title" data-i18n="process.title">8 простых шагов к покупке авто</h2>
+              <p class="section-desc" data-i18n="process.desc">От подбора до передачи — каждый шаг прозрачен.</p>
+            </div>
+            <div class="process-grid">
+              <article class="process-step" data-step="01">
+                <h3 data-i18n="process.s1_title">Подбор авто</h3>
+                <p data-i18n="process.s1_text">Подбор оптимальных вариантов под ваши потребности.</p>
+              </article>
+              <article class="process-step" data-step="02">
+                <h3 data-i18n="process.s2_title">Профессиональная проверка</h3>
+                <p data-i18n="process.s2_text">Полная техническая диагностика и независимый официальный отчёт.</p>
+              </article>
+              <article class="process-step" data-step="03">
+                <h3 data-i18n="process.s3_title">Заключение договора</h3>
+                <p data-i18n="process.s3_text">Официальный договор экспортной продажи с фиксированными условиями.</p>
+              </article>
+              <article class="process-step" data-step="04">
+                <h3 data-i18n="process.s4_title">Безопасная оплата</h3>
+                <p data-i18n="process.s4_text">Расчёты через банк ВТБ с защищёнными каналами.</p>
+              </article>
+              <article class="process-step" data-step="05">
+                <h3 data-i18n="process.s5_title">Таможенное оформление</h3>
+                <p data-i18n="process.s5_text">Подготовка полного пакета документов для легализации экспорта.</p>
+              </article>
+              <article class="process-step" data-step="06">
+                <h3 data-i18n="process.s6_title">Международная перевозка</h3>
+                <p data-i18n="process.s6_text">Надёжная доставка специальным автовозом до порта в России.</p>
+              </article>
+              <article class="process-step" data-step="07">
+                <h3 data-i18n="process.s7_title">Растаможка в РФ</h3>
+                <p data-i18n="process.s7_text">Сопровождение импорта, уплаты пошлин и получения разрешений.</p>
+              </article>
+              <article class="process-step" data-step="08">
+                <h3 data-i18n="process.s8_title">Передача автомобиля</h3>
+                <p data-i18n="process.s8_text">Доставка авто до вашего адреса, передача ключей и документов.</p>
+              </article>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="team alt-bg" id="team">
-      <div class="container">
-        <div class="section-head center">
-          <p class="section-eyebrow" data-i18n="team.eyebrow">Наша команда</p>
-          <h2 class="section-title" data-i18n="team.title">Команда главных менеджеров по продажам</h2>
-          <p class="section-desc" data-i18n="team.desc">Два опытных менеджера сопровождают вас на всех этапах.</p>
-        </div>
-        <div class="team-leads">
-          <article class="team-lead-card">
-            <img src="assets/images/p14_team_00.jpeg" data-i18n-alt="team.henry_alt" alt="Henry" loading="lazy">
-            <div>
-              <h3>Henry</h3>
-              <p class="role" data-i18n="team.henry_role">Менеджер по продажам</p>
-              <div class="team-contact">
-                <div>Telegram: <a href="https://t.me/+8617736876888" target="_blank" rel="noopener">+86 177 3687 6888</a></div>
-                <div><span data-i18n="contact.wc">WeChat</span>: Better_hhy</div>
+      <!-- Panel 3: Contract + Payment -->
+      <section class="panel panel--scroll" data-panel="contract" aria-label="Contract">
+        <div class="panel-inner">
+          <div class="container">
+            <div class="section-head center">
+              <p class="section-eyebrow" data-i18n="contract.eyebrow">Договор и гарантии</p>
+              <h2 class="section-title" data-i18n="contract.title">Официальный трёхъязычный договор</h2>
+              <p class="section-desc" data-i18n="contract.desc">Каждая сделка оформляется официальным договором купли-продажи (SALES CONTRACT) и проформой-инвойсом (PROFORMA INVOICE) на трёх языках — китайском, английском и русском.</p>
+            </div>
+            <div class="split-grid">
+              <div>
+                <ul class="bullet-list">
+                  <li data-i18n-html="contract.b1"></li>
+                  <li data-i18n-html="contract.b2"></li>
+                </ul>
+              </div>
+              <div class="doc-gallery">
+                <img src="assets/images/p05_contract_02.jpeg" data-i18n-alt="contract.img1_alt" alt="SALES CONTRACT" loading="lazy">
+                <img src="assets/images/p05_contract_03.jpeg" data-i18n-alt="contract.img2_alt" alt="PROFORMA INVOICE" loading="lazy">
               </div>
             </div>
-          </article>
-          <article class="team-lead-card">
-            <img src="assets/images/p14_team_03.jpeg" data-i18n-alt="team.zilan_alt" alt="Zi Lan" loading="lazy">
-            <div>
-              <h3>Zi Lan</h3>
-              <p class="role" data-i18n="team.zilan_role">Старший менеджер</p>
-              <div class="team-contact">
-                <div>Telegram: <a href="https://t.me/+15026591435" target="_blank" rel="noopener">+1 502 659 1435</a></div>
-                <div><span data-i18n="contact.wc">WeChat</span>: 1577984136</div>
+
+            <div class="section-head center panel-section-gap">
+              <p class="section-eyebrow" data-i18n="payment.eyebrow">Безопасная оплата</p>
+              <h2 class="section-title" data-i18n="payment.title">Оплата через банк ВТБ — безопасно, надёжно, удобно</h2>
+              <p class="section-desc" data-i18n="payment.desc">Все средства поступают напрямую на корпоративный счёт Chengdu Henry Trading Co., Ltd. Каждая транзакция сопровождается официальным банковским подтверждением.</p>
+            </div>
+            <div class="pay-grid">
+              <article class="pay-card">
+                <h3 data-i18n="payment.p1_title">Прямой перевод</h3>
+                <p data-i18n="payment.p1_text">Оплата напрямую на расчётный счёт компании без посредников и электронных кошельков.</p>
+              </article>
+              <article class="pay-card">
+                <h3 data-i18n="payment.p2_title">Официальные документы</h3>
+                <p data-i18n="payment.p2_text">На каждый платёж — стандартная банковская квитанция ВТБ как полноценный финансовый документ.</p>
+              </article>
+              <article class="pay-card">
+                <h3 data-i18n="payment.p3_title">Реальная банковская квитанция</h3>
+                <p data-i18n="payment.p3_text">Пример подтверждения оплаты с указанием получателя Chengdu Henry Trading Co., Ltd.</p>
+              </article>
+              <article class="pay-card">
+                <h3 data-i18n="payment.p4_title">Надёжное сотрудничество</h3>
+                <p data-i18n="payment.p4_text">Официальные банковские инструменты ВТБ для безопасности всех финансовых операций.</p>
+              </article>
+            </div>
+            <div class="receipt-gallery">
+              <img src="assets/images/p06_payment_vtb_02.jpeg" data-i18n-alt="payment.img1_alt" alt="Банковская квитанция ВТБ — пример 1" loading="lazy">
+              <img src="assets/images/p06_payment_vtb_03.jpeg" data-i18n-alt="payment.img2_alt" alt="Банковская квитанция ВТБ — пример 2" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 4: Inspection + Logistics -->
+      <section class="panel panel--scroll alt-bg" data-panel="inspection" aria-label="Inspection">
+        <div class="panel-inner">
+          <div class="container">
+            <div class="section-head center">
+              <p class="section-eyebrow" data-i18n="inspection.eyebrow">Прозрачность состояния</p>
+              <h2 class="section-title" data-i18n="inspection.title">Обязательная независимая проверка перед экспортом</h2>
+              <p class="section-desc" data-i18n="inspection.desc">Каждое авто проходит строгую проверку сертифицированной третьей стороной (CHABOSHI). Полный доступ к классу технического состояния, истории ДТП и результатам диагностики.</p>
+            </div>
+            <div class="stat-row">
+              <div class="stat-box">
+                <strong data-i18n="inspection.stat1">Класс S</strong>
+                <span data-i18n="inspection.stat1_desc">Наивысший рейтинг состояния</span>
+              </div>
+              <div class="stat-box">
+                <strong data-i18n="inspection.stat2">122</strong>
+                <span data-i18n="inspection.stat2_desc">Пункта полной диагностики</span>
+              </div>
+              <div class="stat-box">
+                <strong data-i18n="inspection.stat3">0</strong>
+                <span data-i18n="inspection.stat3_desc">Рисков: ДТП, утопление, пожар</span>
               </div>
             </div>
-          </article>
-        </div>
-        <div class="team-support">
-          <article class="team-support-card">
-            <img src="assets/images/p14_team_06.jpeg" alt="Shelly" loading="lazy">
-            <div>
-              <h4>Shelly</h4>
-              <p data-i18n="team.shelly_text">Менеджер по логистике.</p>
+            <div class="report-gallery">
+              <img src="assets/images/p07_inspection_chaboshi_03.jpeg" data-i18n-alt="inspection.img1_alt" alt="Отчёт CHABOSHI — рейтинги" loading="lazy">
+              <img src="assets/images/p07_inspection_chaboshi_04.jpeg" data-i18n-alt="inspection.img2_alt" alt="Отчёт CHABOSHI — дефекты" loading="lazy">
+              <img src="assets/images/p08_inspection_detail_03.jpeg" data-i18n-alt="inspection.img3_alt" alt="Отчёт: внешний осмотр кузова" loading="lazy">
+              <img src="assets/images/p08_inspection_detail_04.jpeg" data-i18n-alt="inspection.img4_alt" alt="Отчёт: детализация дефектов" loading="lazy">
             </div>
-          </article>
-          <article class="team-support-card">
-            <img src="assets/images/p14_team_07.jpeg" alt="Lily" loading="lazy">
-            <div>
-              <h4>Lily</h4>
-              <p data-i18n="team.lily_text">Специалист по подбору автомобилей.</p>
-            </div>
-          </article>
-          <article class="team-support-card">
-            <img src="assets/images/p14_team_08.jpeg" alt="Margaret" loading="lazy">
-            <div>
-              <h4>Margaret</h4>
-              <p data-i18n="team.margaret_text">Менеджер по документации.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="contact contact-section" id="contact">
-      <div class="container">
-        <div class="section-head center">
+            <div class="section-head center panel-section-gap">
+              <p class="section-eyebrow" data-i18n="logistics.eyebrow">Логистика</p>
+              <h2 class="section-title" data-i18n="logistics.title">Перевозка автовозом — безопасная доставка</h2>
+              <p class="section-desc" data-i18n="logistics.desc">Строгий контроль безопасности, современное оборудование и опытные водители гарантируют сохранность автомобиля и соблюдение сроков.</p>
+            </div>
+            <div class="logistics-hero">
+              <img src="assets/images/p09_logistics_00.jpeg" data-i18n-alt="logistics.hero_alt" alt="Автовоз с новыми автомобилями" loading="lazy">
+            </div>
+            <div class="logistics-steps">
+              <article class="logistics-step">
+                <div class="num">01</div>
+                <h3 data-i18n="logistics.s1_title">Автовоз с новыми авто</h3>
+                <p data-i18n="logistics.s1_text">Специализированные двухъярусные автовозы для максимальной защиты кузова и стекол.</p>
+              </article>
+              <article class="logistics-step">
+                <div class="num">02</div>
+                <h3 data-i18n="logistics.s2_title">Погрузка и фиксация</h3>
+                <p data-i18n="logistics.s2_text">Гидравлические платформы с надёжными фиксаторами, исключающими смещение при транспортировке.</p>
+              </article>
+              <article class="logistics-step">
+                <div class="num">03</div>
+                <h3 data-i18n="logistics.s3_title">Доставка до портовой зоны</h3>
+                <p data-i18n="logistics.s3_text">Комплексная логистика до крупных морских портов России с координацией портовых служб.</p>
+              </article>
+            </div>
+            <div class="logistics-thumbs">
+              <img src="assets/images/p09_logistics_01.jpeg" data-i18n-alt="logistics.thumb1_alt" alt="Погрузка автомобилей" loading="lazy">
+              <img src="assets/images/p09_logistics_02.jpeg" data-i18n-alt="logistics.thumb2_alt" alt="Доставка до порта" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 5: Clients -->
+      <section class="panel panel--scroll" data-panel="clients" aria-label="Clients">
+        <div class="panel-inner">
+          <div class="container">
+            <div class="section-head center">
+              <p class="section-eyebrow" data-i18n="clients.eyebrow">Фото клиентов</p>
+              <h2 class="section-title" data-i18n="clients.title">Реальные фото передачи авто клиентам из России</h2>
+              <p class="section-desc clients-stories-sub" data-i18n="clients.stories_sub">Избранные истории доставки</p>
+            </div>
+
+            <div class="client-slider client-slider--light" data-slider data-autoplay="7000" aria-roledescription="carousel" aria-label="Featured client stories">
+              <div class="client-slider-viewport">
+                <div class="client-slider-track">
+                  <article class="client-slide client-slide--light">
+                    <div class="client-slide-photo">
+                      <img src="assets/images/p12_clients_a_01.jpeg" data-i18n-alt="clients.c1_alt" alt="Audi Q3" loading="eager">
+                    </div>
+                    <div class="client-slide-caption client-slide-caption--below">
+                      <h3 data-i18n="clients.c1_title">Новый Audi Q3 для семьи</h3>
+                      <p data-i18n="clients.c1_text">Клиенты из Москвы.</p>
+                    </div>
+                  </article>
+                  <article class="client-slide client-slide--light">
+                    <div class="client-slide-photo">
+                      <img src="assets/images/p12_clients_a_02.jpeg" data-i18n-alt="clients.c2_alt" alt="Tayron" loading="lazy">
+                    </div>
+                    <div class="client-slide-caption client-slide-caption--below">
+                      <h3 data-i18n="clients.c2_title">Volkswagen Tayron в Санкт-Петербурге</h3>
+                      <p data-i18n="clients.c2_text">Поздравляем с покупкой нового кроссовера.</p>
+                    </div>
+                  </article>
+                  <article class="client-slide client-slide--light">
+                    <div class="client-slide-photo">
+                      <img src="assets/images/p12_clients_a_03.jpeg" data-i18n-alt="clients.c3_alt" alt="Golf GTI" loading="lazy">
+                    </div>
+                    <div class="client-slide-caption client-slide-caption--below">
+                      <h3 data-i18n="clients.c3_title">Volkswagen Golf GTI</h3>
+                      <p data-i18n="clients.c3_text">Екатеринбург.</p>
+                    </div>
+                  </article>
+                  <article class="client-slide client-slide--light">
+                    <div class="client-slide-photo">
+                      <img src="assets/images/p12_clients_a_04.jpeg" data-i18n-alt="clients.c4_alt" alt="Mazda CX-5" loading="lazy">
+                    </div>
+                    <div class="client-slide-caption client-slide-caption--below">
+                      <h3 data-i18n="clients.c4_title">Mazda CX-5 в зимней Москве</h3>
+                      <p data-i18n="clients.c4_text">Быстрая доставка в сложную погоду.</p>
+                    </div>
+                  </article>
+                  <article class="client-slide client-slide--light">
+                    <div class="client-slide-photo">
+                      <img src="assets/images/p12_clients_a_00.jpeg" data-i18n-alt="clients.c5_alt" alt="Audi Q2" loading="lazy">
+                    </div>
+                    <div class="client-slide-caption client-slide-caption--below">
+                      <h3 data-i18n="clients.c5_title">Audi Q2 — яркий выбор!</h3>
+                      <p data-i18n="clients.c5_text">Радость клиента — наша главная цель.</p>
+                    </div>
+                  </article>
+                  <article class="client-slide client-slide--light">
+                    <div class="client-slide-photo">
+                      <img src="assets/images/p13_clients_b_11.jpeg" data-i18n-alt="clients.c6_alt" alt="Happy clients" loading="lazy">
+                    </div>
+                    <div class="client-slide-caption client-slide-caption--below">
+                      <h3 data-i18n="clients.c6_title">Счастливые покупатели</h3>
+                      <p data-i18n="clients.c6_text">Свидетельство доверия наших клиентов.</p>
+                    </div>
+                  </article>
+                </div>
+                <button type="button" class="client-slider-btn client-slider-prev" tabindex="-1" aria-label="Previous slide"></button>
+                <button type="button" class="client-slider-btn client-slider-next" tabindex="-1" aria-label="Next slide"></button>
+              </div>
+              <div class="client-slider-footer">
+                <div class="client-slider-dots" role="tablist"></div>
+                <span class="client-slider-counter" aria-live="polite"><span class="client-slider-current">1</span> / <span class="client-slider-total">6</span></span>
+              </div>
+            </div>
+
+            <div class="clients-banner">
+              <strong data-i18n="clients.banner_title">5000+ российских клиентов</strong>
+              <p data-i18n="clients.banner_text">Мы доставляем не только автомобили, но и спокойствие и доверие.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 6: Team -->
+      <section class="panel panel--scroll alt-bg" data-panel="team" aria-label="Team">
+        <div class="panel-inner">
+          <div class="container">
+            <div class="section-head center">
+              <p class="section-eyebrow" data-i18n="team.eyebrow">Наша команда</p>
+              <h2 class="section-title" data-i18n="team.title">Команда главных менеджеров по продажам</h2>
+              <p class="section-desc" data-i18n="team.desc">Два опытных менеджера сопровождают вас на всех этапах — от подбора автомобиля до его получения. Оперативная связь, быстрые ответы и профессиональный сервис.</p>
+            </div>
+            <div class="team-leads">
+              <article class="team-lead-card">
+                <img src="assets/images/p14_team_00.jpeg" data-i18n-alt="team.henry_alt" alt="Henry" loading="lazy">
+                <div>
+                  <h3>Henry</h3>
+                  <p class="role" data-i18n="team.henry_role">Менеджер по продажам</p>
+                  <div class="team-contact">
+                    <span><span data-i18n="contact.wa">WhatsApp</span>: +86 177 3687 6888</span>
+                    <span><span data-i18n="contact.tg">Telegram</span>: +86 177 3687 6888</span>
+                    <span><span data-i18n="contact.wc">WeChat</span>: Better_hhy</span>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-sm team-contact-open" data-contact-modal="henry" data-i18n="team.contact_btn">Связаться</button>
+                </div>
+              </article>
+              <article class="team-lead-card">
+                <img src="assets/images/p14_team_03.jpeg" data-i18n-alt="team.zilan_alt" alt="Zi Lan" loading="lazy">
+                <div>
+                  <h3>Zi Lan</h3>
+                  <p class="role" data-i18n="team.zilan_role">Старший менеджер</p>
+                  <div class="team-contact">
+                    <span><span data-i18n="contact.wa">WhatsApp</span>: +86 150 8260 3119</span>
+                    <span><span data-i18n="contact.tg">Telegram</span>: +1 502 659 1435</span>
+                    <span><span data-i18n="contact.wc">WeChat</span>: 1577984136</span>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-sm team-contact-open" data-contact-modal="zilan" data-i18n="team.contact_btn">Связаться</button>
+                </div>
+              </article>
+            </div>
+            <div class="team-support">
+              <article class="team-support-card">
+                <img src="assets/images/p14_team_06.jpeg" alt="Shelly" loading="lazy">
+                <div>
+                  <h4>Shelly</h4>
+                  <p data-i18n="team.shelly_text">Менеджер по логистике и сопровождению заказов, контроль доставки и сроков.</p>
+                </div>
+              </article>
+              <article class="team-support-card">
+                <img src="assets/images/p14_team_07.jpeg" alt="Lily" loading="lazy">
+                <div>
+                  <h4>Lily</h4>
+                  <p data-i18n="team.lily_text">Специалист по подбору автомобилей, анализ запросов и оптимальные варианты.</p>
+                </div>
+              </article>
+              <article class="team-support-card">
+                <img src="assets/images/p14_team_08.jpeg" alt="Margaret" loading="lazy">
+                <div>
+                  <h4>Margaret</h4>
+                  <p data-i18n="team.margaret_text">Менеджер по документации, оформление всех бумаг для экспорта авто.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="panel-dots" role="tablist" aria-label="Panels">
+    <button type="button" class="panel-dot active" data-panel="home" aria-label="Home" aria-selected="true"></button>
+    <button type="button" class="panel-dot" data-panel="about" aria-label="About" aria-selected="false"></button>
+    <button type="button" class="panel-dot" data-panel="process" aria-label="Process" aria-selected="false"></button>
+    <button type="button" class="panel-dot" data-panel="contract" aria-label="Contract" aria-selected="false"></button>
+    <button type="button" class="panel-dot" data-panel="inspection" aria-label="Inspection" aria-selected="false"></button>
+    <button type="button" class="panel-dot" data-panel="clients" aria-label="Clients" aria-selected="false"></button>
+    <button type="button" class="panel-dot" data-panel="team" aria-label="Team" aria-selected="false"></button>
+  </div>
+
+  <template id="contact-panel-template">
+    <footer class="contact-bar contact-bar--panel" data-contact-section aria-label="Contact">
+      <div class="contact-bar-inner">
+        <div class="section-head center contact-bar-head">
           <h2 class="section-title" data-i18n="contact.title">Готовы выбрать авто из Китая?</h2>
-          <p class="section-desc" data-i18n="contact.desc">Свяжитесь с нами �?подберём лучшие варианты.</p>
+          <p class="section-desc" data-i18n="contact.desc">Свяжитесь с нами — подберём лучшие варианты.</p>
         </div>
-        <div class="contact-grid">
+        <div class="contact-grid contact-grid--bar">
           <article class="contact-card">
             <h3>Henry</h3>
             <p class="role" data-i18n="contact.henry_role">Менеджер по продажам</p>
@@ -565,18 +540,36 @@
           </article>
         </div>
       </div>
-    </section>
-  </main>
+    </footer>
+  </template>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p data-i18n="footer.copy">© 2026 Chengdu Henry Trading Co., Ltd. · HENRY AUTO · Все права защищены.</p>
+  <div class="contact-modal" id="contact-modal" hidden role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="contact-modal-backdrop" data-contact-modal-close tabindex="-1"></div>
+    <div class="contact-modal-dialog" tabindex="-1">
+      <button type="button" class="contact-modal-close" data-contact-modal-close data-i18n-aria="contact.modal_close_aria" aria-label="Закрыть">×</button>
+      <h2 id="contact-modal-title" class="contact-modal-title" data-i18n="contact.overlay_title">Связаться с нами</h2>
+      <p class="contact-modal-desc" data-i18n="contact.overlay_desc">Выберите удобный способ связи с нашими менеджерами.</p>
+
+      <article class="contact-card contact-modal-card" data-contact-member="henry">
+        <h3>Henry</h3>
+        <p class="role" data-i18n="team.henry_role">Менеджер по продажам</p>
+        <div class="contact-links">
+          <a href="https://wa.me/8617736876888" target="_blank" rel="noopener"><span data-i18n="contact.wa">WhatsApp</span>: +86 177 3687 6888</a>
+          <a href="https://t.me/+8617736876888" target="_blank" rel="noopener"><span data-i18n="contact.tg">Telegram</span>: +86 177 3687 6888</a>
+          <span><span data-i18n="contact.wc">WeChat</span>: Better_hhy</span>
+        </div>
+      </article>
+
+      <article class="contact-card contact-modal-card" data-contact-member="zilan" hidden>
+        <h3>Zi Lan</h3>
+        <p class="role" data-i18n="team.zilan_role">Старший менеджер</p>
+        <div class="contact-links">
+          <a href="https://wa.me/8615082603119" target="_blank" rel="noopener"><span data-i18n="contact.wa">WhatsApp</span>: +86 150 8260 3119</a>
+          <a href="https://t.me/+15026591435" target="_blank" rel="noopener"><span data-i18n="contact.tg">Telegram</span>: +1 502 659 1435</a>
+          <span><span data-i18n="contact.wc">WeChat</span>: 1577984136</span>
+        </div>
+      </article>
     </div>
-  </footer>
-
-  <div class="mobile-bar">
-    <a href="#process" data-i18n="mobile.process">Процесс</a>
-    <a href="#contact" class="mobile-bar-cta" data-i18n="mobile.contact">Связаться</a>
   </div>
 
   <script src="js/i18n.js"></script>

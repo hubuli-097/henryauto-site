@@ -1,6 +1,7 @@
 (function () {
   const STORAGE_KEY = "henryauto_lang";
   const SUPPORTED = ["ru", "zh", "en"];
+  const PANEL_ORDER = ["home", "about", "process", "contract", "inspection", "clients", "team"];
 
   function t(lang, key) {
     const parts = key.split(".");
@@ -61,6 +62,26 @@
 
   window.HenryI18n = { applyLanguage, t, detectDefaultLang };
 
+  function setupPanelContacts() {
+    const tpl = document.getElementById("contact-panel-template");
+    if (!tpl) return;
+
+    document.querySelectorAll(".panel:not(.panel--home) .panel-inner").forEach((inner) => {
+      if (inner.querySelector("[data-contact-section]")) return;
+
+      const container = inner.querySelector(":scope > .container");
+      if (!container) return;
+
+      const body = document.createElement("div");
+      body.className = "panel-body";
+      inner.insertBefore(body, container);
+      body.appendChild(container);
+      inner.appendChild(tpl.content.cloneNode(true));
+    });
+  }
+
+  setupPanelContacts();
+
   document.querySelectorAll(".lang-switch [data-lang]").forEach((btn) => {
     btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
   });
@@ -76,43 +97,158 @@
       toggle.setAttribute("aria-expanded", String(!open));
       mobileNav.hidden = open;
     });
+  }
 
-    mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        toggle.setAttribute("aria-expanded", "false");
-        mobileNav.hidden = true;
-      });
+  const track = document.getElementById("panel-track");
+  const panels = track ? [...track.querySelectorAll(".panel")] : [];
+  const panelDots = [...document.querySelectorAll(".panel-dot")];
+  const navPanelLinks = document.querySelectorAll(
+    "a[data-panel], button[data-panel]:not(.panel-dot)"
+  );
+  let panelIndex = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  function isHomePanel() {
+    return PANEL_ORDER[panelIndex] === "home";
+  }
+
+  function pageScrollTop() {
+    return window.scrollY || document.documentElement.scrollTop || 0;
+  }
+
+  function scrollToContactBar() {
+    const bar = isHomePanel()
+      ? document.getElementById("contact-bar")
+      : panels[panelIndex]?.querySelector("[data-contact-section]");
+    if (!bar) return;
+
+    bar.scrollIntoView({ behavior: "smooth", block: "start" });
+    pulseContactHighlight(bar);
+  }
+
+  function highlightContactBar() {
+    scrollToContactBar();
+  }
+
+  function panelIdToIndex(id) {
+    const idx = PANEL_ORDER.indexOf(id);
+    return idx >= 0 ? idx : 0;
+  }
+
+  function updateNavState(id) {
+    navPanelLinks.forEach((el) => {
+      if (!el.dataset.panel) return;
+      const active = el.dataset.panel === id;
+      if (el.matches(".nav-desktop a, .nav-mobile a, .logo")) {
+        el.classList.toggle("active", active);
+      }
+    });
+    panelDots.forEach((dot) => {
+      const active = dot.dataset.panel === id;
+      dot.classList.toggle("active", active);
+      dot.setAttribute("aria-selected", String(active));
     });
   }
 
-  const navLinks = document.querySelectorAll('.nav-desktop a[href^="#"], .nav-mobile a[href^="#"]');
+  function pulseContactHighlight(bar) {
+    if (!bar) return;
+    bar.classList.remove("contact-highlight");
+    void bar.offsetWidth;
+    bar.classList.add("contact-highlight");
+    window.setTimeout(() => bar.classList.remove("contact-highlight"), 1800);
+  }
 
-  if (navLinks.length) {
-    const sections = [...navLinks]
-      .map((a) => document.querySelector(a.getAttribute("href")))
-      .filter(Boolean);
+  function goToPanel(id, options = {}) {
+    if (!track || panels.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = entry.target.id;
-          navLinks.forEach((link) => {
-            const active = link.getAttribute("href") === `#${id}`;
-            link.style.opacity = active ? "1" : "";
-            link.style.color = active ? "var(--orange)" : "";
-          });
-        });
+    const nextIndex = panelIdToIndex(id);
+    const isSamePanel = nextIndex === panelIndex;
+
+    panelIndex = nextIndex;
+    track.style.transform = `translateX(-${panelIndex * 100}%)`;
+    document.body.dataset.activePanel = id;
+
+    panels.forEach((panel) => {
+      panel.classList.toggle("panel--active", panel.dataset.panel === id);
+    });
+
+    updateNavState(id);
+
+    if (!options.preserveScroll && !isSamePanel) {
+      window.scrollTo(0, 0);
+    }
+    if (options.focusContact) {
+      window.setTimeout(scrollToContactBar, 420);
+    }
+
+    if (toggle && mobileNav && !mobileNav.hidden) {
+      toggle.setAttribute("aria-expanded", "false");
+      mobileNav.hidden = true;
+    }
+  }
+
+  navPanelLinks.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = el.dataset.panel;
+      if (!id) return;
+      goToPanel(id, { focusContact: el.hasAttribute("data-focus-contact") });
+    });
+  });
+
+  panelDots.forEach((dot) => {
+    dot.addEventListener("click", () => goToPanel(dot.dataset.panel));
+  });
+
+  document.querySelectorAll("[data-contact-highlight]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      highlightContactBar();
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" && panelIndex > 0) {
+      goToPanel(PANEL_ORDER[panelIndex - 1]);
+    }
+    if (e.key === "ArrowRight" && panelIndex < PANEL_ORDER.length - 1) {
+      goToPanel(PANEL_ORDER[panelIndex + 1]);
+    }
+  });
+
+  const viewport = document.getElementById("panel-viewport");
+  if (viewport) {
+    viewport.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.target.closest("[data-slider]")) return;
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
       },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      { passive: true }
     );
-
-    sections.forEach((section) => observer.observe(section));
+    viewport.addEventListener(
+      "touchend",
+      (e) => {
+        if (e.target.closest("[data-slider]")) return;
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        const deltaY = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+        if (pageScrollTop() > 8) return;
+        if (deltaX < 0 && panelIndex < PANEL_ORDER.length - 1) {
+          goToPanel(PANEL_ORDER[panelIndex + 1]);
+        } else if (deltaX > 0 && panelIndex > 0) {
+          goToPanel(PANEL_ORDER[panelIndex - 1]);
+        }
+      },
+      { passive: true }
+    );
   }
 
   function initClientSliders() {
     document.querySelectorAll("[data-slider]").forEach((root) => {
-      const track = root.querySelector(".client-slider-track");
+      const trackEl = root.querySelector(".client-slider-track");
       const slides = [...root.querySelectorAll(".client-slide")];
       const dotsWrap = root.querySelector(".client-slider-dots");
       const prevBtn = root.querySelector(".client-slider-prev");
@@ -121,12 +257,35 @@
       const totalEl = root.querySelector(".client-slider-total");
       const intervalMs = Number(root.dataset.autoplay) || 7000;
 
-      if (!track || slides.length === 0) return;
+      if (!trackEl || slides.length === 0) return;
 
       let index = 0;
       let timer = null;
 
       if (totalEl) totalEl.textContent = String(slides.length);
+
+      function bindSliderControl(el, handler) {
+        if (!el) return;
+        el.tabIndex = -1;
+        el.addEventListener("pointerdown", (e) => {
+          if (e.pointerType === "mouse" && e.button !== 0) return;
+          e.preventDefault();
+          e.stopPropagation();
+        });
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const scrollY = window.scrollY;
+          handler();
+          if (document.activeElement === el) {
+            el.blur();
+          }
+          window.scrollTo(0, scrollY);
+          requestAnimationFrame(() => {
+            window.scrollTo(0, scrollY);
+          });
+        });
+      }
 
       slides.forEach((_, i) => {
         const dot = document.createElement("button");
@@ -134,7 +293,7 @@
         dot.className = "client-slider-dot" + (i === 0 ? " active" : "");
         dot.setAttribute("role", "tab");
         dot.setAttribute("aria-label", `Slide ${i + 1}`);
-        dot.addEventListener("click", () => goTo(i, true));
+        bindSliderControl(dot, () => goTo(i, true));
         dotsWrap?.appendChild(dot);
       });
 
@@ -142,7 +301,7 @@
 
       function goTo(nextIndex, userTriggered) {
         index = (nextIndex + slides.length) % slides.length;
-        track.style.transform = `translateX(-${index * 100}%)`;
+        trackEl.style.transform = `translateX(-${index * 100}%)`;
         dots.forEach((dot, i) => {
           dot.classList.toggle("active", i === index);
           dot.setAttribute("aria-selected", String(i === index));
@@ -179,19 +338,19 @@
         startAutoplay();
       }
 
-      prevBtn?.addEventListener("click", prev);
-      nextBtn?.addEventListener("click", () => goTo(index + 1, true));
+      bindSliderControl(prevBtn, prev);
+      bindSliderControl(nextBtn, () => goTo(index + 1, true));
 
       root.addEventListener("mouseenter", stopAutoplay);
       root.addEventListener("mouseleave", startAutoplay);
       root.addEventListener("focusin", stopAutoplay);
       root.addEventListener("focusout", startAutoplay);
 
-      let touchStartX = 0;
+      let sliderTouchStartX = 0;
       root.addEventListener(
         "touchstart",
         (e) => {
-          touchStartX = e.changedTouches[0].clientX;
+          sliderTouchStartX = e.changedTouches[0].clientX;
           stopAutoplay();
         },
         { passive: true }
@@ -199,7 +358,7 @@
       root.addEventListener(
         "touchend",
         (e) => {
-          const delta = e.changedTouches[0].clientX - touchStartX;
+          const delta = e.changedTouches[0].clientX - sliderTouchStartX;
           if (Math.abs(delta) > 40) {
             if (delta < 0) goTo(index + 1, true);
             else prev();
@@ -216,4 +375,50 @@
   }
 
   initClientSliders();
+  initContactModal();
+  goToPanel("home");
+
+  function initContactModal() {
+    const modal = document.getElementById("contact-modal");
+    if (!modal) return;
+
+    const dialog = modal.querySelector(".contact-modal-dialog");
+    const memberCards = [...modal.querySelectorAll("[data-contact-member]")];
+    let lastTrigger = null;
+
+    function openContactModal(memberId, trigger) {
+      memberCards.forEach((card) => {
+        card.hidden = card.dataset.contactMember !== memberId;
+      });
+      lastTrigger = trigger ?? null;
+      modal.hidden = false;
+      document.body.classList.add("contact-modal-open");
+      dialog?.focus();
+    }
+
+    function closeContactModal() {
+      modal.hidden = true;
+      document.body.classList.remove("contact-modal-open");
+      lastTrigger?.focus();
+      lastTrigger = null;
+    }
+
+    document.querySelectorAll("[data-contact-modal]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openContactModal(el.dataset.contactModal, el);
+      });
+    });
+
+    modal.querySelectorAll("[data-contact-modal-close]").forEach((el) => {
+      el.addEventListener("click", closeContactModal);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) {
+        closeContactModal();
+      }
+    });
+  }
 })();
